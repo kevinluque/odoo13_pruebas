@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="reporte_purchase_order_coopsol">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="header">
+                    <div class="row" style="border-width: thin;border-bottom-style: ridge; font-size:16px;">
+                        <div class="col-4">
+                            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)"  alt="Logo" style="max-height: 260px; max-width: 220px; vertical-align: baseline; " />
+                        </div>  
+                        <div class="col-3">
+                        </div>
+                        <div class="col-5" style="font-weight: normal; font-size:16px; text-align: right;color:#454545;">
+                            <t t-if="o.company_id">
+                                <t t-if="o.company_id.vat">
+                                    <span>[</span> <span t-field="o.company_id.vat"></span> <span>]</span>
+                                </t>
+                                <t t-if="o.company_id.name">
+                                    <span style="color:#454545;" t-field="o.company_id.name"> </span>
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div style="border-width: 5px;border-top-style: solid; font-size:14px;">
+                        <div class="row">
+                            <div class="col-12" style="font-weight: normal; font-size:14px; text-align: center;">
+                                    <t t-if="o.company_id.phone">
+                                        <span style="color:#454545;" >Tel.: </span>
+                                        <span style="color:#454545;"  t-field="o.company_id.phone"></span>
+                                    </t>
+
+                                    <t t-if="o.company_id.email">
+                                        <span style="position:relative;left:9px; color:#454545;" >Correo: </span>
+                                        <span style="position:relative;left:9px; color:#454545;" t-field="o.company_id.email"></span>
+                                    </t>
+
+                                    <t t-if="o.company_id.website">
+                                        <span style="position:relative;left:18px; color:#454545;" >Red: </span>
+                                        <span style="position:relative;left:18px; color:#454545;"  t-field="o.company_id.website"></span>
+                                    </t>
+
+                                    <t t-if="o.company_id.vat">
+                                        <span style="position:relative;left:27px; color:#454545;" >RUC: </span>
+                                        <span style="position:relative;left:27px; color:#454545;"  t-field="o.company_id.vat"></span>
+                                    </t>
+                                    <br/>
+                                    <ul class="list-inline">
+                                        <span>Page:</span>
+                                        <span class="page"/>
+                                        <span>/</span>
+                                        <span class="topage"/>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+
+                <div t-attf-class="article o_report_layout_standard o_company_#{o.company_id.id}_layout"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+                    
+                        <div class="page">
+                            <div class="row">
+                                <div class="col-5">
+                                    <t t-if="o.company_id">
+                                        <span style= "font-size:13.5px; color:#454545;" >Dirección de Envío</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.company_id.name"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.company_id.phone">
+                                        <span style= "font-size:13.5px; color:#454545;" >Dirección de Envío</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.company_id.phone"></span>
+                                        <br/>
+                                    </t>
+                                    <br/><br/>
+                                    <t t-if="o.state in ('draft','sent','to approve')">
+                                        <span style= "font-weight: bold;font-size:13.5px">Solicitud de presupuesto #</span>
+                                        <span style= "font-weight: bold;font-size:13.5px" t-field="o.name"></span>
+                                        <br/><br/>
+                                    </t>
+                                    <t t-if="o.state in ('purchase','done','cancel')">
+                                        <span style= "font-weight: bold;font-size:13.5px">Pedido de compra #</span>
+                                        <span style= "font-weight: bold;font-size:13.5px" t-field="o.name"></span>
+                                        <br/><br/>
+                                    </t>
+
+                                    <t t-if="o.date_order">
+                                        <span style= "font-size:13.5px; color:#454545;" >Fecha de orden:</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.date_order"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.date_planned">
+                                        <span style= "font-size:13.5px; color:#454545;" >Fecha de Recepción:</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.date_planned"></span>
+                                        <br/>
+                                    </t>
+                                </div>
+                                <div class="col-2"></div>
+                                <div class="col-5">
+                                    <t t-if="o.partner_id.vat">
+                                        <span style= "font-size:13.5px; color:#454545;" >[</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.vat"></span>
+                                        <span style= "font-size:13.5px; color:#454545;" >]</span>
+                                    </t>
+                                    <t t-if="o.partner_id">
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.name"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.partner_id.vat">
+                                        <span style= "font-size:13.5px; color:#454545;" >RUC:</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.vat"></span>
+                                        <br/>
+                                    </t>
+
+                                    <t t-if="o.partner_id.phone">
+                                        <span style= "font-size:13.5px; color:#454545;" >telefono:</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.phone"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.partner_id.mobile">
+                                        <span style= "font-size:13.5px; color:#454545;" >telefono:</span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.mobile"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.partner_id.email">
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.email"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.partner_id.street">
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.street"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.payment_term_id">
+                                        <span style= "font-size:13.5px; color:#454545;" >Plazo de pago: </span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.payment_term_id.name"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.ot_id">
+                                        <span style= "font-size:13.5px; color:#454545;" >OT:  </span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.ot_id.name"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.user_id">
+                                        <span style= "font-size:13.5px; color:#454545;" >Solicitante:  </span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.user_id.name"></span>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.requisition_id">
+                                        <span style= "font-size:13.5px; color:#454545;" >Acuerdo de compra:  </span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.requisition_id.name"></span>
+                                        <br/>
+                                    </t>
+                                </div>
+
+                                
+                            </div>
+
+                            
+                                
+                            <br/>
+
+
+
+
+
+
+                            
+
+<t t-if="o.order_line">
+    <table>
+        <tbody>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr>
+                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                    <center style="font-size:17.5px;font-weight: bold;" >Ítem</center>
+                </td>
+                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                    <center style="font-size:17.5px;font-weight: bold;" >Codigo</center>
+                </td>
+                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: left;">
+                    <center styles="font-size:17.5px;font-weight: bold;" >DESCRIPCIÓN</center>
+                </td>
+                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                    <center styles="font-size:17.5px;font-weight: bold;" >FECHA PREVISTA</center>
+                </td>
+                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;">
+                    <center styles="font-size:17.5px;font-weight: bold;" >CANT</center>
+                </td>
+                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;">
+                    <center styles="font-size:17.5px;font-weight: bold;" >PRECIO UNITARIO</center>
+                </td>
+                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                    <center styles="font-size:17.5px;font-weight: bold;" >IMPORTE</center>
+                </td>
+            </tr>
+            <t t-set="contador" t-value="1"/>
+
+            <t t-foreach="o.order_line" t-as="linea" >
+                <t t-if="contador == len(o.order_line)">
+                    <tr>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <span style="color:#454545;" t-esc="contador"/>
+                    </td>
+
+                    <td style="border-width: thin;border-left-style: ridge;border-bottom-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <t t-if="linea.product_id.default_code">
+                            <span style="color:#454545;" t-field="linea.product_id.default_code"/>
+                        </t>
+                    </td>
+
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <t t-if="linea.name">
+                            <SPAN t-esc="linea.name if linea.name == linea.product_id.name_get()[0][1] else linea.name.replace(linea.product_id.name_get()[0][1],'')"/>
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <t t-if="linea.date_planned">
+                            <span style="color:#454545;" t-field="linea.date_planned"/>
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <t t-if="linea.product_qty">
+                            <span style="color:#454545;" t-esc="linea.product_uom.name" />
+                        </t>
+                        <t t-if="linea.product_uom">
+                            <span style="color:#454545;" t-esc="linea.product_uom.name" />
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <t t-if="linea.price_unit">
+                            <span style="color:#454545;" t-esc="linea.price_unit"/>
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <t t-if="linea.price_subtotal">
+                            <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%linea.price_subtotal)"/>
+                        </t>
+                    </td>
+                </tr>
+                </t>
+
+                <t t-if="contador &lt; len(o.order_line)">
+
+                <tr>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <span style="color:#454545;" t-esc="contador"/>
+                    </td>
+
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <t t-if="linea.product_id.default_code">
+                            <span style="color:#454545;" t-field="linea.product_id.default_code"/>
+                        </t>
+                    </td>
+
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <t t-if="linea.name">
+                            <SPAN t-esc="linea.name if linea.name == linea.product_id.name_get()[0][1] else linea.name.replace(linea.product_id.name_get()[0][1],'')"/>
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <t t-if="linea.date_planned">
+                            <span style="color:#454545;" t-field="linea.date_planned"/>
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <t t-if="linea.product_qty">
+                            <span style="color:#454545;" t-esc="linea.product_uom.name" />
+                        </t>
+                        <t t-if="linea.product_uom">
+                            <span style="color:#454545;" t-esc="linea.product_uom.name" />
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <t t-if="linea.price_unit">
+                            <span style="color:#454545;" t-esc="linea.price_unit"/>
+                        </t>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <t t-if="linea.price_subtotal">
+                            <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%linea.price_subtotal)"/>
+                        </t>
+                    </td>
+                </tr>
+                <t t-set="contador" t-value="contador+1"/>
+                </t>
+            </t>
+        </tbody>
+    </table>
+    <br/>
+    <div align="right">
+        <table style="width: 80mm">
+            <tbody>
+                <tr><td></td><td></td></tr>
+                <tr>
+                    <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:16px; text-align: left; min-width: 55px; min-height: 55px;">
+                        <span>Subtotal</span>
+                    </td>
+                    <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:16px; text-align: right; min-width: 55px; min-height: 55px;">
+                        <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_untaxed)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:16px; text-align: left;">
+                        <span>Impuestos</span>
+                    </td>
+                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_tax)"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color:#FFFFFF; background-color: black;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:16px; text-align: left;">
+                        <span>Total</span>
+                    </td>
+                    <td style="color:#FFFFFF; background-color: black;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                        <span t-esc="o.currency_id.symbol +str('%.2f'%o.amount_total)"/>
+                    </td>
+                </tr>        
+            </tbody>
+        </table>
+    </div>
+    <br/>
+        <t t-if="o.notes">
+            <span style="color:#454545;" t-field="o.notes"> </span>
+        </t>
+</t>
+
+
+
+
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
+
+
+        <record id="paperformat_despacho_purchase_it_copsol" model="report.paperformat">
+            <field name="name">Reporte Despacho</field>
+            <field name="default" eval="False" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">50</field>
+            <field name="margin_bottom">24</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">45</field>
+            <field name="dpi">90</field>
+        </record>
+
+
+    <report 
+        id="action_purchase_order_coopsol"
+        string="Orden De Compra"
+        model="purchase.order"
+        report_type="qweb-pdf"
+        file="purchase_order_report_formats.reporte_purchase_order_coopsol"
+        name="purchase_order_report_formats.reporte_purchase_order_coopsol"
+        paperformat="purchase_order_report_formats.paperformat_despacho_purchase_it_copsol"
+        print_report_name="'Orden de Compra N° - %s' % (object.name)"
+        />
+</odoo>
