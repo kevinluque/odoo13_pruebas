@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <record id="res_config_settings_acuerdo_compra_view_form_purchase" model="ir.ui.view">
+            <field name="name">res.config.settings.acuerdo.compra.view.form.purchase</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='group_warning_purchase']" position="after">
+                    <field name="acuerdo_de_compra" string="Acuerdos De Compra Por Defecto" />                    
+                </xpath>                
+            </field>
+        </record>
+	</data>
+</odoo>
