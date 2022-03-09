@@ -139,8 +139,6 @@
                                         <br/>
                                     </t>
                                     
-
-
                                     
                                     <t t-if="o.user_id">
                                         <span style= "font-size:13.5px; color:#2A2A2A;" >Solicitante:  </span>
@@ -285,26 +283,26 @@
             <tbody>
                 <tr><td></td><td></td></tr>
                 <tr>
-                    <td style="padding: 10px;border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:16px; text-align: left; min-width: 55px; min-height: 55px;">
+                    <td style="padding: 3px;border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:16px; text-align: left; min-width: 55px; min-height: 55px;">
                         <span>Subtotal</span>
                     </td>
-                    <td style="padding: 10px;border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:16px; text-align: right; min-width: 55px; min-height: 55px;">
+                    <td style="padding: 3px;border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:16px; text-align: right; min-width: 55px; min-height: 55px;">
                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_untaxed)"/>
                     </td>
                 </tr>
                 <tr>
-                    <td style="color:#454545;padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                    <td style="color:#454545;padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <span>Impuestos</span>
                     </td>
-                    <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                    <td style="padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_tax)"/>
                     </td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px;color:#FFFFFF; background-color: black;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:16px; text-align: left;">
+                    <td style="padding: 3px;color:#FFFFFF; background-color: black;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:16px; text-align: left;">
                         <span>Total</span>
                     </td>
-                    <td style="padding: 10px;color:#FFFFFF; background-color: black;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
+                    <td style="padding: 3px;color:#FFFFFF; background-color: black;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
                         <span t-esc="o.currency_id.symbol +str('%.2f'%o.amount_total)"/>
                     </td>
                 </tr>        
