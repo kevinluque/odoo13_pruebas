@@ -139,6 +139,7 @@
                                         <br/>
                                     </t>
                                     
+
                                     
                                     <t t-if="o.user_id">
                                         <span style= "font-size:13.5px; color:#2A2A2A;" >Solicitante:  </span>
@@ -151,12 +152,7 @@
                                         <br/>
                                     </t>
                                 </div>
-
-                                
                             </div>
-
-                            
-                                
                             <br/>
 
 
@@ -204,7 +200,7 @@
 
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <t t-if="linea.name">
-                            <SPAN t-esc="linea.name if linea.name == linea.product_id.name_get()[0][1] else linea.name.replace(linea.product_id.name_get()[0][1],'')"/>
+                            <SPAN style="color:#454545;" t-esc="linea.name.replace('[' + (linea.name.code or '' ) + ']','')"/>
                         </t>
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: center;">
@@ -245,7 +241,7 @@
 
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <t t-if="linea.name">
-                            <SPAN t-esc="linea.name if linea.name == linea.product_id.name_get()[0][1] else linea.name.replace(linea.product_id.name_get()[0][1],'')"/>
+                            <SPAN style="color:#454545;" t-esc="linea.name.replace('[' + (linea.name.code or '' ) + ']','')"/>
                         </t>
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: center;">
