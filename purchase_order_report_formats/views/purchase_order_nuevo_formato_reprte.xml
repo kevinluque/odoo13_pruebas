@@ -139,7 +139,6 @@
                                         <br/>
                                     </t>
                                     
-
                                     
                                     <t t-if="o.user_id">
                                         <span style= "font-size:13.5px; color:#2A2A2A;" >Solicitante:  </span>
@@ -200,7 +199,7 @@
 
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <t t-if="linea.name">
-                            <SPAN style="color:#454545;" t-esc="linea.name.replace('[' + (linea.name.code or '' ) + ']','')"/>
+                            <SPAN style="color:#454545;" t-esc="linea.name.replace('[' + (linea.product_id.code or '' ) + ']','')"/>
                         </t>
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: center;">
@@ -241,7 +240,7 @@
 
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <t t-if="linea.name">
-                            <SPAN style="color:#454545;" t-esc="linea.name.replace('[' + (linea.name.code or '' ) + ']','')"/>
+                            <SPAN style="color:#454545;" t-esc="linea.name.replace('[' + (linea.product_id.code or '' ) + ']','')"/>
                         </t>
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: center;">
