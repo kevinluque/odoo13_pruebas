@@ -67,8 +67,8 @@
                                                     <span>FECHA.VENC.:</span>
                                                 </td>
                                                 <td style="color:#454545;font-family: Arial; font-size:18px; text-align: left;padding: 10px;">
-                                                    <t t-if="o.invoice_payment_term_id">
-                                                        <span t-field="o.invoice_payment_term_id"> </span>
+                                                    <t t-if="o.invoice_date_due">
+                                                        <span t-field="o.invoice_date_due"> </span>
                                                     </t>
                                                 </td>
                                             </tr>
@@ -203,7 +203,7 @@
                                 <div class="col-12">
                                     <table style="width: 320mm; border-width: normal;border:1px solid;border-radius: 30px !important;">
                                         <tbody>
-                                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                                             <tr>
                                                 <td style="color:#2B2B2B;font-family: Arial; font-size:19px; text-align: left;">
                                                     <span style="padding: 8px;font-weight: bold;">ORIGEN N°:</span>
@@ -216,14 +216,20 @@
                                                     
                                                 </td>
                                                 <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: left;">
+                                                    <span style="padding: 8px;font-weight: bold;">CONDICIONES DE PAGO:</span>
+                                                </td>
+                                                <td style="color:#454545; font-size:18px; text-align: left;">
+                                                    <t t-if="o.invoice_payment_term_id">
+                                                        <span style="padding: 8px;font-family: Arial;" t-field="o.invoice_payment_term_id.name"> </span>
+                                                    </t>
+                                                </td>
+                                                <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: left;">
                                                     <span style="padding: 8px;font-weight: bold;">VEND.:</span>
                                                 </td>
                                                 <td style="color:#454545; font-size:18px; text-align: left;">
                                                     <t t-if="o.invoice_user_id">
                                                         <span style="padding: 8px;font-family: Arial;" t-field="o.invoice_user_id.name"> </span>
                                                     </t>
-                                                </td>
-                                                <td style="width: 180mm;">
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -277,31 +283,24 @@
                                         <tr>
                                             <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid;border-bottom-style: ridge; font-weight: bold; font-size:16px; text-align: center;padding: 10px">
                                                 <center style="font-family: Arial;font-size:18px;font-weight: bold;" >CÓDIGO</center>
-                                                <br/>
                                             </td>
                                             <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
                                                 <center style="font-family: Arial;font-size:18px;font-weight: bold;" >DESCRIPCIÓN</center>
-                                                <br/>
                                             </td>
                                             <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: left;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >CANT.</center>
-                                                <br/>
                                             </td>
                                             <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >U.M. </center>
-                                                <br/>
                                             </td>
                                             <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: right;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >P.U.</center>
-                                                <br/>
                                             </td>
                                             <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: right;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >IMPUESTO</center>
-                                                <br/>
                                             </td>
                                             <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >IMPORTE</center>
-                                                <br/>
                                             </td>
                                         </tr>
                                         <t t-set="contador" t-value="1"/>
@@ -310,45 +309,38 @@
                                             <t t-if="contador == len(o.invoice_line_ids)">
                                                 <tr>
                                                     <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 10px;">
-                                                        <br/>
                                                         <t t-if="linea.product_id.default_code">
                                                             <span style="color:#454545;" t-field="linea.product_id.default_code"/>
                                                         </t>
                                                     </td>
                                 
                                                     <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal;border-bottom-style: ridge; font-size:19px; text-align: left;padding: 10px;">
-                                                        <br/>
                                                         <t t-if="linea.name">
                                                             <span style="color:#454545;" t-field="linea.name"/>
                                                         </t>
                                                     </td>
                                 
                                                     <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px;border-bottom-style: ridge; text-align: right;padding: 10px;">
-                                                        <br/>
                                                         <t t-if="linea.quantity">
                                                             <SPAN style="color:#454545;" t-esc="linea.quantity"/>
                                                         </t>
                                                     </td>
                                                     <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px;border-bottom-style: ridge; text-align: center;padding: 10px;">
-                                                        <br/>
                                                         <t t-if="linea.product_uom_id">
                                                             <span style="color:#454545;" t-field="linea.product_uom_id.name"/>
                                                         </t>
                                                     </td>
                                                     <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px;border-bottom-style: ridge; text-align: center;padding: 10px;">
-                                                        <br/>
                                                         <t t-if="linea.price_unit">
                                                             <span style="color:#454545;" t-esc="linea.price_unit" />
                                                         </t>
                                                     </td>
                                                     <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; border-bottom-style: ridge;text-align: center;padding: 10px;">
-                                                        <br/>
                                                         <t t-if="linea.tax_ids">
                                                             <span style="color:#454545;" t-esc="linea.tax_ids[0].name" />
                                                         </t>
                                                     </td>
                                                     <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: solid; font-weight: normal; font-size:19px;border-bottom-style: ridge; text-align: right;padding: 10px;">
-                                                        <br/>
                                                         <t t-if="linea.price_subtotal">
                                                             <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%linea.price_subtotal)"/>
                                                         </t>
@@ -360,45 +352,38 @@
                             
                                             <tr>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 10px;">
-                                                    <br/>
-                                                        <t t-if="linea.product_id.default_code">
-                                                            <span style="color:#454545;" t-field="linea.product_id.default_code"/>
-                                                        </t>
+                                                    <t t-if="linea.product_id.default_code">
+                                                        <span style="color:#454545;" t-field="linea.product_id.default_code"/>
+                                                    </t>
                                                 </td>
                             
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: left;padding: 10px;">
-                                                    <br/>
                                                     <t t-if="linea.name">
                                                         <span style="color:#454545;" t-field="linea.name"/>
                                                     </t>
                                                 </td>
                             
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: right;padding: 10px;">
-                                                    <br/>
                                                     <t t-if="linea.quantity">
                                                         <SPAN style="color:#454545;" t-esc="linea.quantity"/>
                                                     </t>
                                                 </td>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 10px;">
-                                                    <br/>
                                                     <t t-if="linea.product_uom_id">
                                                         <span style="color:#454545;" t-field="linea.product_uom_id.name"/>
                                                     </t>
                                                 </td>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 10px;">
-                                                    <br/>
                                                     <t t-if="linea.price_unit">
                                                         <span style="color:#454545;" t-esc="linea.price_unit" />
                                                     </t>
                                                 </td>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 10px;">
-                                                    <br/>
                                                     <t t-if="linea.tax_ids">
                                                         <span style="color:#454545;" t-esc="linea.tax_ids[0].name" />
                                                     </t>
                                                 </td>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: solid; font-weight: normal; font-size:19px; text-align: right;padding: 10px;">
-                                                    <br/>
                                                     <t t-if="linea.price_subtotal">
                                                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%linea.price_subtotal)"/>
                                                     </t>
@@ -446,34 +431,30 @@
                                         </tr>
                                         <tr>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center; padding: 10px;">
-                                                    <br/>
                                                     <t t-if="o.amount_untaxed">
                                                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str(o.amount_untaxed)"/>
                                                     </t>
                                                 </td>
                             
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-bottom-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: center; padding: 10px;">
-                                                    <br/>
+
                                                 </td>
                             
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center; padding: 10px;">
-                                                    <br/>
+                                                    
                                                 </td>
-                                                <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center; padding: 10px;">
-                                                    <br/>
+                                                <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center; padding: 10px;">                                                    
                                                     <t t-if="o.amount_tax">
                                                         <SPAN style="color:#454545;" t-esc="o.currency_id.symbol +str(o.amount_tax)"/>
                                                     </t>
                                                 </td>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: left; padding: 10px;">
-                                                    <br/>
                                                     <t t-if="o.amount_total">
                                                         <span style="color:#454545;" t-esc="o.amount_total" />
                                                     </t>
                                                     
                                                 </td>
                                                 <td style="font-family: Arial;border-width: 2.5px;border-left-style: ridge;border-right-style: solid;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center; padding: 10px;">
-                                                    <br/>
                                                     <t t-if="o.amount_total">
                                                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str(o.amount_total)" />
                                                     </t>
