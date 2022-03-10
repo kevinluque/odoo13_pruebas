@@ -51,7 +51,7 @@
                     
                         <div class="page">
                             <div class="row" style="border-width: thin;border-bottom-style: ridge; font-size:16px;">
-                                <div class="col-7" align="left">
+                                <div class="col-6" align="left">
                                     <table width="45%" style="border:1px solid;border-radius: 30px">
                                         <tbody>
                                             <tr><td></td><td></td><td></td><td></td></tr>
@@ -134,8 +134,8 @@
 
 
 
-                                <div class="col-5" align="right">
-                                    <table width = "44%" style="border:3px double black;">
+                                <div class="col-6">
+                                    <table width = "45%" style="border:3px double black;">
                                         <tbody>
                                             <tr><td></td></tr>
                                             <tr>
