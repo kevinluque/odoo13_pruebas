@@ -299,10 +299,10 @@
                 <t t-set="count" t-value="o.get_distribucion_impuestos_txt()" />
                     <t t-foreach="count" t-as="linea_tax" >
                         <tr>
-                            <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:18px; text-align: left;font-family: Arial;padding: 10px;">                                                        
+                            <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:16px; text-align: left;font-family: Arial;padding: 10px;">
                                 <span t-esc="linea_tax[0]"/>
                             </td>
-                            <td style="background-color: #D5D4D4;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:18px;font-family: Arial; text-align: right;padding: 10px;">
+                            <td style="background-color: #D5D4D4;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px;font-family: Arial; text-align: right;padding: 10px;">
                                 <span t-esc="o.currency_id.symbol"/>
                                 <span t-esc="linea_tax[1]"/>
                             </td>
