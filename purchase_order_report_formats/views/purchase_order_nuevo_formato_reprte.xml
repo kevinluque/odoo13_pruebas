@@ -298,10 +298,10 @@
                 <t t-if="o.order_line[1].taxes_id">
                 <tr>
                     <td style="color:#454545;padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
-                        <t t-if="o.order_line[1].taxes_id">
-                            <span t-esc="o.order_line[1].taxes_id[1].name"/>
+                        <t t-if="o.order_line[0].taxes_id">
+                            <span t-esc="o.order_line[0].taxes_id[0].name"/>
                             <br/>
-                            <span t-esc="'en ' + str(o.pricelist_id.currency_id.symbol) +str('%.2f'%o.amount_untaxed)"/>
+                            <span t-esc="'en ' + str(o.currency_id.symbol) +str('%.2f'%o.amount_untaxed)"/>
                         </t>
                     </td>
                     <td style="padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
