@@ -303,7 +303,7 @@
                                 <span t-esc="linea_tax[0]"/>
                             </td>
                             <td style="background-color: #D5D4D4;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:18px;font-family: Arial; text-align: right;padding: 10px;">
-                                <span t-esc="o.pricelist_id.currency_id.symbol"/>
+                                <span t-esc="o.currency_id.symbol"/>
                                 <span t-esc="linea_tax[1]"/>
                             </td>
                         </tr>
