@@ -179,34 +179,9 @@
             </t>
         </t>
     </template>
-
-
-
-        <record id="paperformat_solicitud_copsol" model="report.paperformat">
-            <field name="name">Reporte solicitud presupuesto</field>
-            <field name="default" eval="False" />
-            <field name="format">A4</field>
-            <field name="page_height">0</field>
-            <field name="page_width">0</field>
-            <field name="orientation">Portrait</field>
-            <field name="margin_top">50</field>
-            <field name="margin_bottom">24</field>
-            <field name="margin_left">7</field>
-            <field name="margin_right">7</field>
-            <field name="header_line" eval="False" />
-            <field name="header_spacing">45</field>
-            <field name="dpi">90</field>
-        </record>
-
-
-    <report 
-        id="action_purchase_solicitud_coopsol"
-        string="Solicitud de Presupuesto"
-        model="purchase.order"
-        report_type="qweb-pdf"
-        file="purchase_order_presupuesto_report_formats.reporte_purchase_solicitud_coopsol"
-        name="purchase_order_presupuesto_report_formats.reporte_purchase_solicitud_coopsol"
-        paperformat="purchase_order_presupuesto_report_formats.paperformat_solicitud_copsol"
-        print_report_name="'Solicitud de Presupuesto N° - %s' % (object.name)"
-        />
+    <template id="report_purchase_order_presupuesto_inherit_tecniases" inherit_id="purchase.report_purchasequotation">
+        <xpath expr="//t[@t-call='purchase.report_purchasequotation_document']" position="replace">
+                <t t-call="purchase_order_presupuesto_report_formats.reporte_purchase_solicitud_coopsol" t-lang="o.partner_id.lang"/>
+        </xpath>
+    </template> 
 </odoo>

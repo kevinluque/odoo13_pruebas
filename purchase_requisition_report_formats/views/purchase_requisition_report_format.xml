@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <template id="reporte_purchase_requisition_coopsol">
+    <template id="purchase_requisition.report_purchaserequisitions">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <div class="header">
@@ -213,7 +213,7 @@
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 8px;">
                                                     <t t-if="linea_compra.date_approve">                                                        
-                                                        <span style="color:#454545;font-family: Arial;" t-esc="linea_compra.date_order"></span>
+                                                        <span style="color:#454545;font-family: Arial;" t-field="linea_compra.date_order"></span>
                                                     </t>
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: solid;border-bottom-style: ridge;background-color: #E8EAE9; font-weight: normal; font-size:19px; text-align: right;padding: 8px;">
@@ -233,7 +233,7 @@
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: left;padding: 8px;">
                                                     <t t-if="linea_compra.date_approve">                                                        
-                                                        <span style="color:#454545;font-family: Arial;" t-esc="linea_compra.date_order"></span>
+                                                        <span style="color:#454545;font-family: Arial;" t-field="linea_compra.date_order"></span>
                                                     </t>
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: solid; font-weight: normal;background-color: #E8EAE9; font-size:19px; text-align: right;padding: 8px;">
@@ -258,35 +258,5 @@
             </t>
         </t>
     </template>
-
-
-
-        <record id="paperformat_licitacion_it_copsol" model="report.paperformat">
-            <field name="name">Reporte Despacho</field>
-            <field name="default" eval="False" />
-            <field name="format">A4</field>
-            <field name="page_height">0</field>
-            <field name="page_width">0</field>
-            <field name="orientation">Portrait</field>
-            <field name="margin_top">50</field>
-            <field name="margin_bottom">24</field>
-            <field name="margin_left">7</field>
-            <field name="margin_right">7</field>
-            <field name="header_line" eval="False" />
-            <field name="header_spacing">45</field>
-            <field name="dpi">90</field>
-        </record>
-
-
-    <report 
-        id="action_purchase_requisition_coopsol"
-        string="Licitacion"
-        model="purchase.requisition"
-        report_type="qweb-pdf"
-        file="purchase_requisition_report_formats.reporte_purchase_requisition_coopsol"
-        name="purchase_requisition_report_formats.reporte_purchase_requisition_coopsol"
-        paperformat="purchase_requisition_report_formats.paperformat_licitacion_it_copsol"
-        print_report_name="'Licitacion N° - %s' % (object.name)"
-        />
 </odoo>
                 

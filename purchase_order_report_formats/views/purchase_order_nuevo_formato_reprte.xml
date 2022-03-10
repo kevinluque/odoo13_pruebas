@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <template id="reporte_purchase_order_coopsol">
+    <template id="reporte_purchase_order_rep_s_coopsol">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <div class="header">
@@ -309,15 +309,6 @@
                         </tr>
                 </t>
                 
-
-
-
-
-
-
-
-
-
                 <tr>
                     <td style="padding: 3px;color:#FFFFFF; background-color: black;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:16px; text-align: left;">
                         <span>Total</span>
@@ -335,49 +326,6 @@
         </t>
 </t>
 
-
-
-
-                            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         </div>
                 </div>
             </t>
@@ -385,32 +333,9 @@
     </template>
 
 
-
-        <record id="paperformat_despacho_purchase_it_copsol" model="report.paperformat">
-            <field name="name">Reporte Despacho</field>
-            <field name="default" eval="False" />
-            <field name="format">A4</field>
-            <field name="page_height">0</field>
-            <field name="page_width">0</field>
-            <field name="orientation">Portrait</field>
-            <field name="margin_top">50</field>
-            <field name="margin_bottom">24</field>
-            <field name="margin_left">7</field>
-            <field name="margin_right">7</field>
-            <field name="header_line" eval="False" />
-            <field name="header_spacing">45</field>
-            <field name="dpi">90</field>
-        </record>
-
-
-    <report 
-        id="action_purchase_order_coopsol"
-        string="Orden De Compra"
-        model="purchase.order"
-        report_type="qweb-pdf"
-        file="purchase_order_report_formats.reporte_purchase_order_coopsol"
-        name="purchase_order_report_formats.reporte_purchase_order_coopsol"
-        paperformat="purchase_order_report_formats.paperformat_despacho_purchase_it_copsol"
-        print_report_name="'Orden de Compra N° - %s' % (object.name)"
-        />
+    <template id="report_purchase_order_rep_s_inherit_tecniases" inherit_id="purchase.report_purchaseorder">
+        <xpath expr="//t[@t-call='purchase.report_purchaseorder_document']" position="replace">
+                <t t-call="purchase_order_report_formats.reporte_purchase_order_rep_s_coopsol" t-lang="o.partner_id.lang"/>
+        </xpath>
+    </template>
 </odoo>
