@@ -203,7 +203,7 @@
                                 <div class="col-12">
                                     <table style="width: 320mm; border-width: normal;border:1px solid;border-radius: 30px !important;">
                                         <tbody>
-                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                                             <tr>
                                                 <td style="color:#2B2B2B;font-family: Arial; font-size:19px; text-align: left;">
                                                     <span style="padding: 8px;font-weight: bold;">ORIGEN N°:</span>
@@ -231,6 +231,9 @@
                                                         <span style="padding: 8px;font-family: Arial;" t-field="o.invoice_user_id.name"> </span>
                                                     </t>
                                                 </td>
+                                                <td style="width=80mm;">
+                                                </td>
+
                                             </tr>
                                         </tbody>
                                     </table>
