@@ -52,22 +52,22 @@
                         <div class="page">
                             
                                 <div align="left">
-                                    <table style="border:1px solid;border-radius: 30px">
+                                    <table width="45%" style="border:1px solid;border-radius: 30px">
                                         <tbody>
                                             <tr><td></td><td></td><td></td><td></td></tr>
                                             <tr>
-                                                <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: left;font-weight: bold; padding: 10px;">
+                                                <td style="color:#2B2B2B;font-family: Arial; font-size:16px; text-align: left;font-weight: bold; padding: 5px;">
                                                     <span>FECHA.FAC.:</span>
                                                 </td>
-                                                <td style="color:#454545;font-family: Arial; font-size:18px; text-align: left;padding: 10px;">
+                                                <td style="color:#454545;font-family: Arial; font-size:16px; text-align: left;padding: 5px;">
                                                     <t t-if="o.invoice_date">
                                                         <span t-field="o.invoice_date"> </span>
                                                     </t>
                                                 </td>
-                                                <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: right;font-weight: bold;padding: 10px;">
+                                                <td style="color:#2B2B2B;font-family: Arial; font-size:16px; text-align: right;font-weight: bold;padding: 5px;">
                                                     <span>FECHA.VENC.:</span>
                                                 </td>
-                                                <td style="color:#454545;font-family: Arial; font-size:18px; text-align: left;padding: 10px;">
+                                                <td style="color:#454545;font-family: Arial; font-size:16px; text-align: left;padding: 5px;">
                                                     <t t-if="o.invoice_date_due">
                                                         <span t-field="o.invoice_date_due"> </span>
                                                     </t>
@@ -136,7 +136,7 @@
 
 
                                 <div align="right">
-                                    <table style="border:3px double black;">
+                                    <table width="45%" style="border:3px double black;">
                                         <tbody>
                                             <tr><td></td></tr>
                                             <tr>
@@ -394,30 +394,30 @@
                                         <tbody>
                                             <tr><td></td><td></td></tr>
                                             <tr>
-                                                <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:18px; text-align: left; min-width: 55px; min-height: 55px;font-family: Arial;padding: 5px;">
+                                                <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:18px; text-align: left; min-width: 55px;font-family: Arial;padding: 5px;">
                                                     <span>Subtotal</span>
                                                 </td>
-                                                <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px; min-height: 55px;padding: 5px;">
+                                                <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px; padding: 5px;">
                                                     <span style="color:#454545;font-family: Arial;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_untaxed)"/>
                                                 </td>
                                             </tr>
                                             <t t-foreach="o.amount_by_group" t-as="amount_by_group">
                                                 <tr>
                                                     <t t-if="amount_by_group[5] == 1 and o.amount_untaxed == amount_by_group[2]">
-                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:18px; text-align: left; min-width: 55px; min-height: 55px;font-family: Arial;padding: 5px;" name="td_amount_by_group_label_3">
+                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:18px; text-align: left; min-width: 55px; font-family: Arial;padding: 5px;" name="td_amount_by_group_label_3">
                                                             <span t-esc="amount_by_group[0]"/>
                                                             <span>&amp;nbsp;<span>en</span>&amp;nbsp;<t t-esc="amount_by_group[2]" t-options='{"widget": "monetary", "display_currency": o.currency_id}'/></span>
                                                         </td>
-                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px; min-height: 55px;padding: 5px;" name="td_amount_by_group_3" class="text-right o_price_total">
+                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px; padding: 5px;" name="td_amount_by_group_3" class="text-right o_price_total">
                                                             <span t-esc="amount_by_group[1]"
                                                                 t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                                         </td>
                                                     </t>
                                                     <t t-else ="">
-                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:18px; text-align: left; min-width: 55px; min-height: 55px;font-family: Arial;padding: 5px;" name="td_amount_by_group_label">
+                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:18px; text-align: left; min-width: 55px; font-family: Arial;padding: 5px;" name="td_amount_by_group_label">
                                                             <span t-esc="amount_by_group[0]"/>
                                                         </td>
-                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px; min-height: 55px;padding: 5px;" name="td_amount_by_group" class="text-right o_price_total">
+                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px; padding: 5px;" name="td_amount_by_group" class="text-right o_price_total">
                                                             <span t-esc="amount_by_group[1]"
                                                                 t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                                         </td>
