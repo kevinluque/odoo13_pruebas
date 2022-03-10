@@ -50,8 +50,8 @@
                 <div t-attf-class="article o_report_layout_standard o_company_#{o.company_id.id}_layout"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
                     
                         <div class="page">
-                            
-                                <div align="left">
+                            <div class="row" style="border-width: thin;border-bottom-style: ridge; font-size:16px;">
+                                <div class="col-7" align="left">
                                     <table width="45%" style="border:1px solid;border-radius: 30px">
                                         <tbody>
                                             <tr><td></td><td></td><td></td><td></td></tr>
@@ -128,47 +128,48 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <table align="right" width="35%" style="border:3px double black;">
-                                            <tbody>
-                                                <tr><td></td></tr>
-                                                <tr>
-                                                    <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
-                                                        <span>RUC N°</span>
-                                                        <t t-if="o.company_id.vat">
-                                                            <span t-field="o.company_id.vat"> </span>
-                                                        </t>
-                                                        <br/><br/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
-                                                        <t t-if="o.state == 'draft'">
-                                                            <span>BORRADOR</span>
-                                                        </t>
-                                                        <t t-if="o.state in ('posted','cancel')">
-                                                            <span>FACTURA ELECTRÓNICA</span>
-                                                        </t>
-                                                        <br/><br/>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="font-size:22px; text-align: center;font-weight: bold;padding: 10px;">
-                                                        <t t-if="o.name">
-                                                            <span t-field="o.name"> </span>
-                                                        </t>
-                                                    </td>
-                                                </tr>
-    
-                                            </tbody>
-                                    </table>
                                 </div>
 
 
 
 
 
+                                <div class="col-5" align="right">
+                                    <table width = "35%" style="border:3px double black;">
+                                        <tbody>
+                                            <tr><td></td></tr>
+                                            <tr>
+                                                <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
+                                                    <span>RUC N°</span>
+                                                    <t t-if="o.company_id.vat">
+                                                        <span t-field="o.company_id.vat"> </span>
+                                                    </t>
+                                                    <br/><br/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
+                                                    <t t-if="o.state == 'draft'">
+                                                        <span>BORRADOR</span>
+                                                    </t>
+                                                    <t t-if="o.state in ('posted','cancel')">
+                                                        <span>FACTURA ELECTRÓNICA</span>
+                                                    </t>
+                                                    <br/><br/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-size:22px; text-align: center;font-weight: bold;padding: 10px;">
+                                                    <t t-if="o.name">
+                                                        <span t-field="o.name"> </span>
+                                                    </t>
+                                                </td>
+                                            </tr>
 
-                                
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             
 
 
@@ -416,7 +417,7 @@
                                                         <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: bold; font-size:18px; text-align: left; min-width: 55px; font-family: Arial;padding: 5px;" name="td_amount_by_group_label">
                                                             <span t-esc="amount_by_group[0]"/>
                                                         </td>
-                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px; padding: 5px;" name="td_amount_by_group" class="text-right o_price_total">
+                                                        <td style="border-width: thin;border-left-style: solid;border-right-style: solid;border-top-style: solid; font-weight: normal; font-size:18px; text-align: right; min-width: 55px;padding: 5px;" name="td_amount_by_group" class="text-right o_price_total">
                                                             <span t-esc="amount_by_group[1]"
                                                                 t-options='{"widget": "monetary", "display_currency": o.currency_id}'/>
                                                         </td>
