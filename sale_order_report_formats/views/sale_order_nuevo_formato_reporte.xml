@@ -145,22 +145,22 @@
                                     <tbody>
                                         <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                                         <tr>
-                                            <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;padding: 10px;">
+                                            <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;padding: 10px;">
                                                 <center style="font-size:17.5px;font-weight: bold;font-family: Arial;" >ITEM</center>
                                             </td>
-                                            <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: left;padding: 10px;">
+                                            <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: left;padding: 10px;">
                                                 <span styles="font-size:17.5px;font-weight: bold;font-family: Arial;" >DESCRIPCIÓN</span>
                                             </td>
-                                            <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;padding: 10px;">
+                                            <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;font-family: Arial;" >CANTIDAD</center>
                                             </td>
-                                            <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;padding: 10px;">
+                                            <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;padding: 10px;">
                                                 <span styles="font-size:17.5px;font-weight: bold;font-family: Arial;" >UNI. DE MEDIDA</span>
                                             </td>
-                                            <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;padding: 10px;">
+                                            <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;font-family: Arial;" >PRECIO UNITARIO</center>
                                             </td>
-                                            <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;padding: 10px;">
+                                            <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;font-family: Arial;" >SUBTOTAL</center>
                                             </td>
                                         </tr>
