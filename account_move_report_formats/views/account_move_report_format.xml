@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <template id="reporte_account_move_coopsol">
+    <template id="account.report_invoice_document">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <div class="header">
@@ -473,34 +473,4 @@
             </t>
         </t>
     </template>
-
-
-
-        <record id="paperformat_despacho_account_it_copsol" model="report.paperformat">
-            <field name="name">Reporte Despacho</field>
-            <field name="default" eval="False" />
-            <field name="format">A4</field>
-            <field name="page_height">0</field>
-            <field name="page_width">0</field>
-            <field name="orientation">Portrait</field>
-            <field name="margin_top">50</field>
-            <field name="margin_bottom">24</field>
-            <field name="margin_left">7</field>
-            <field name="margin_right">7</field>
-            <field name="header_line" eval="False" />
-            <field name="header_spacing">45</field>
-            <field name="dpi">90</field>
-        </record>
-
-
-    <report 
-        id="action_account_move_coopsol"
-        string="Facturas"
-        model="account.move"
-        report_type="qweb-pdf"
-        file="account_move_report_formats.reporte_account_move_coopsol"
-        name="account_move_report_formats.reporte_account_move_coopsol"
-        paperformat="account_move_report_formats.paperformat_despacho_account_it_copsol"
-        print_report_name="'Factura N° - %s' % (object.name)"
-        />
 </odoo>
