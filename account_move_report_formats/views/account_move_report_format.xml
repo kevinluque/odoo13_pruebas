@@ -74,10 +74,10 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: left;font-weight: bold;padding: 10px;">
+                                                <td style="color:#2B2B2B;font-family: Arial; font-size:16px; text-align: left;font-weight: bold;padding: 5px;">
                                                     <span>CLIENTE:</span>
                                                 </td>
-                                                <td style="color:#454545;font-family: Arial; font-size:18px; text-align: left;" colspan="3">
+                                                <td style="color:#454545;font-family: Arial; font-size:16px; text-align: left;" colspan="3">
                                                     <t t-if="o.partner_id.vat">
                                                         <span style= "font-size:18px; color:#454545;" >[</span>
                                                         <span style= "font-size:18px; color:#454545;" t-field="o.partner_id.vat"></span>
@@ -89,36 +89,36 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: left;font-weight: bold;position:relative;left:4px;padding: 10px;">
+                                                <td style="color:#2B2B2B;font-family: Arial; font-size:16px; text-align: left;font-weight: bold;position:relative;left:4px;padding: 5px;">
                                                     <span>DIRECCIÓN:</span>
                                                 </td>
-                                                <td style="color:#454545;font-family: Arial; font-size:17px; text-align: left; padding: 10px;" colspan="3">
+                                                <td style="color:#454545;font-family: Arial; font-size:16px; text-align: left; padding: 5px;" colspan="3">
                                                     <t t-if="o.partner_id.street">
                                                         <span t-field="o.partner_id.street"> </span>
                                                         <br/>
                                                     </t>
                                                     <t t-if="o.partner_id.state_id">
-                                                        <span style="color:#454545; font-family: Arial;font-size:17px; text-align: left;" t-field="o.partner_id.state_id.name"> </span>
+                                                        <span style="color:#454545; font-family: Arial;font-size:16px; text-align: left;" t-field="o.partner_id.state_id.name"> </span>
                                                         <br/>
                                                     </t>
                                                     <t t-if="o.partner_id.country_id">
-                                                        <span style="color:#454545;font-family: Arial; font-size:17px; text-align: left;" t-field="o.partner_id.country_id.name"> </span>
+                                                        <span style="color:#454545;font-family: Arial; font-size:16px; text-align: left;" t-field="o.partner_id.country_id.name"> </span>
                                                     </t>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: left;font-weight: bold;position:relative;left:4px; padding: 10px;">
+                                                <td style="color:#2B2B2B;font-family: Arial; font-size:16px; text-align: left;font-weight: bold;position:relative;left:4px; padding: 5px;">
                                                     <span>RUC:</span>
                                                 </td>
-                                                <td style="color:#454545;font-family: Arial; font-size:18px; text-align: left;padding: 10px;">
+                                                <td style="color:#454545;font-family: Arial; font-size:16px; text-align: left;padding: 5px;">
                                                     <t t-if="o.partner_id.vat">
                                                         <span t-field="o.partner_id.vat"> </span>
                                                     </t>
                                                 </td>
-                                                <td style="color:#2B2B2B;font-family: Arial; font-size:17px; text-align: right;font-weight: bold;padding: 10px;">
+                                                <td style="color:#2B2B2B;font-family: Arial; font-size:16px; text-align: right;font-weight: bold;padding: 5px;">
                                                     <span>MONEDA:</span>
                                                 </td>
-                                                <td style="color:#454545;font-family: Arial; font-size:18px; text-align: left; padding: 10px;">
+                                                <td style="color:#454545;font-family: Arial; font-size:16px; text-align: left; padding: 5px;">
                                                     <t t-if="o.currency_id">
                                                         <t t-if="o.currency_id.currency_unit_label">
                                                             <span t-field="o.currency_id.currency_unit_label"> </span>
@@ -135,31 +135,31 @@
 
 
                                 <div class="col-5" align="right">
-                                    <table width = "35%" style="border:3px double black;">
+                                    <table width = "44%" style="border:3px double black;">
                                         <tbody>
                                             <tr><td></td></tr>
                                             <tr>
-                                                <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
+                                                <td style="font-size:22px; text-align: center;font-weight: bold;padding: 10px;">
                                                     <span>RUC N°</span>
                                                     <t t-if="o.company_id.vat">
                                                         <span t-field="o.company_id.vat"> </span>
                                                     </t>
-                                                    <br/><br/>
+                                                    <br/>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
+                                                <td style="font-size:22px; text-align: center;font-weight: bold;padding: 10px;">
                                                     <t t-if="o.state == 'draft'">
                                                         <span>BORRADOR</span>
                                                     </t>
                                                     <t t-if="o.state in ('posted','cancel')">
                                                         <span>FACTURA ELECTRÓNICA</span>
                                                     </t>
-                                                    <br/><br/>
+                                                    <br/>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="font-size:22px; text-align: center;font-weight: bold;padding: 10px;">
+                                                <td style="font-size:20px; text-align: center;font-weight: bold;padding: 10px;">
                                                     <t t-if="o.name">
                                                         <span t-field="o.name"> </span>
                                                     </t>
