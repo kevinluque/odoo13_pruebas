@@ -52,7 +52,7 @@
                         <div class="page">
                             <div class="row">
                                 <div class="col-7">
-                                    <table style="border:1px solid;border-radius: 30px!important;height:180px;width:700px">
+                                    <table style="border:1px solid;border-radius: 30px!important;height:180px;">
                                         <tbody>
                                             <tr><td></td><td></td><td></td><td></td></tr>
                                             <tr>
@@ -140,7 +140,7 @@
                                         <tbody>
                                             <tr><td></td></tr>
                                             <tr>
-                                                <td style="font-size:27px; text-align: center;font-weight: bold;padding: 10px;">
+                                                <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
                                                     <span>RUC N°</span>
                                                     <t t-if="o.company_id.vat">
                                                         <span t-field="o.company_id.vat"> </span>
@@ -149,7 +149,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="font-size:27px; text-align: center;font-weight: bold;padding: 10px;">
+                                                <td style="font-size:24px; text-align: center;font-weight: bold;padding: 10px;">
                                                     <t t-if="o.state == 'draft'">
                                                         <span>BORRADOR</span>
                                                     </t>
@@ -175,34 +175,10 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                             <br/><br/>
                             <div class="row">
                                 <div class="col-12">
-                                    <table style="width: 320mm; border-width: normal;border:1px solid;border-radius: 30px !important;">
+                                    <table style="border-width: normal;border:1px solid;border-radius: 30px !important;">
                                         <tbody>
                                             <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                                             <tr>
@@ -282,29 +258,29 @@
                             <br/><br/>
 
                             <t t-if="o.invoice_line_ids">
-                                <table style="width: 320mm;">
+                                <table>
                                     <tbody>
                                         <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                                         <tr>
-                                            <td style="color:#FFFFFF; background-color: black;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid;border-bottom-style: ridge; font-weight: bold; font-size:16px; text-align: center;padding: 10px">
+                                            <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid;border-bottom-style: ridge; font-weight: bold; font-size:16px; text-align: center;padding: 10px">
                                                 <center style="font-family: Arial;font-size:18px;font-weight: bold;" >CÓDIGO</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
+                                            <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
                                                 <center style="font-family: Arial;font-size:18px;font-weight: bold;" >DESCRIPCIÓN</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: left;padding: 10px">
+                                            <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: left;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >CANT.</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
+                                            <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >U.M. </center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: right;padding: 10px">
+                                            <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: right;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >P.U.</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: right;padding: 10px">
+                                            <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: right;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >IMPUESTO</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
+                                            <td style="border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold;border-bottom-style: ridge; font-size:16px; text-align: center;padding: 10px">
                                                 <center styles="font-family: Arial;font-size:18px;font-weight: bold;" >IMPORTE</center>
                                             </td>
                                         </tr>
@@ -404,7 +380,7 @@
 
 
 
-                                <table style="width: 320mm">
+                                <table>
                                     <tbody>
                                         <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                                         <tr>
@@ -415,22 +391,22 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td style="color:#FFFFFF; background-color: black;font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: center; padding: 10px;">
+                                            <td style="font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: center; padding: 10px;">
                                                 <center style="font-size:17.5px;font-weight: normal;" >SUBTOTAL de VENTA</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: left; padding: 10px;">
+                                            <td style="font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: left; padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;" >VENTA</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: center; padding: 10px;">
+                                            <td style="font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: center; padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;" >OPERACIONES GRATUITAS</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: right; padding: 10px;">
+                                            <td style="font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: right; padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;" >I.G.V.</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: right; padding: 10px;">
+                                            <td style="font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: right; padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;" >OTROS CARGOS</center>
                                             </td>
-                                            <td style="color:#FFFFFF; background-color: black;font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: center; padding: 10px;">
+                                            <td style="font-family: Arial;border-width: 2.5px;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-size:18px; text-align: center; padding: 10px;">
                                                 <center styles="font-size:17.5px;font-weight: bold;" >TOTAL</center>
                                             </td>
                                         </tr>
@@ -468,7 +444,6 @@
                                         </tbody>
                                     </table>
                         </t>
-                                            
                    </div>
                 </div>
             </t>
