@@ -73,16 +73,15 @@
                                         <span style= "font-size:13.5px; color:#454545;" t-field="o.company_id.phone"></span>
                                         <br/>
                                     </t>
-                                    <br/><br/>
                                     <t t-if="o.state in ('draft','sent','to approve')">
                                         <span style= "font-weight: normal;font-size:13.5px">Solicitud de presupuesto #</span>
-                                        <span style= "font-weight: bold;font-size:13.5px" t-field="o.name"></span>
-                                        <br/><br/>
+                                        <span style= "color:#ED3237;font-weight: bold;font-size:13.5px" t-field="o.name"></span>
+                                        <br/>
                                     </t>
                                     <t t-if="o.state in ('purchase','done','cancel')">
                                         <span style= "font-weight: normal;font-size:13.5px">Pedido de compra #</span>
-                                        <span style= "font-weight: bold;font-size:13.5px" t-field="o.name"></span>
-                                        <br/><br/>
+                                        <span style= "color:#ED3237;font-weight: bold;font-size:13.5px" t-field="o.name"></span>
+                                        <br/>
                                     </t>
 
                                     <t t-if="o.date_order">
@@ -108,7 +107,8 @@
                                         <br/>
                                     </t>
                                     <t t-if="o.partner_id.vat">
-                                        <span style= "font-size:13.5px; color:#2A2A2A;" >RUC: </span>
+                                        <span style= "font-size:13.5px; color:#2A2A2A;" t-field="o.l10n_latam_identification_type_id.name"></span>
+                                        <span style= "font-size:13.5px; color:#2A2A2A;">: </span>
                                         <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.vat"></span>
                                         <br/>
                                     </t>
@@ -138,8 +138,11 @@
                                         <span style= "font-size:13.5px; color:#454545;" t-field="o.payment_term_id.name"></span>
                                         <br/>
                                     </t>
-                                    
-                                    
+                                    <t t-if="o.ot_id">
+                                        <span style= "font-size:13.5px; color:#2A2A2A;" >OT:  </span>
+                                        <span style= "font-size:13.5px; color:#454545;" t-field="o.ot_id.name"></span>
+                                        <br/>
+                                    </t>
                                     <t t-if="o.user_id">
                                         <span style= "font-size:13.5px; color:#2A2A2A;" >Solicitante:  </span>
                                         <span style= "font-size:13.5px; color:#454545;" t-field="o.user_id.name"></span>
@@ -164,24 +167,27 @@
 <t t-if="o.order_line">
     <table>
         <tbody>
-            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
             <tr>
-                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
-                    <center style="font-size:17.5px;font-weight: bold;" >Codigo</center>
+                <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                    <center style="font-size:17.5px;font-weight: bold;" >ITEM</center>
                 </td>
-                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: left;">
+                <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                    <center style="font-size:17.5px;font-weight: bold;" >CODIGO</center>
+                </td>
+                <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: left;">
                     <center styles="font-size:17.5px;font-weight: bold;" >DESCRIPCIÓN</center>
                 </td>
-                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
                     <center styles="font-size:17.5px;font-weight: bold;" >FECHA PREVISTA</center>
                 </td>
-                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;">
+                <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;">
                     <center styles="font-size:17.5px;font-weight: bold;" >CANT</center>
                 </td>
-                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;">
+                <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: right;">
                     <center styles="font-size:17.5px;font-weight: bold;" >PRECIO UNITARIO</center>
                 </td>
-                <td style="border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
+                <td style="color:#FFFFFF; background-color: black;border-width: thin;border-top-style: solid;border-left-style: solid;border-right-style: solid; font-weight: bold; font-size:16px; text-align: center;">
                     <center styles="font-size:17.5px;font-weight: bold;" >IMPORTE</center>
                 </td>
             </tr>
@@ -190,6 +196,10 @@
             <t t-foreach="o.order_line" t-as="linea" >
                 <t t-if="contador == len(o.order_line)">
                     <tr>
+                        <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-bottom-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                            <span style="color:#454545;" t-esc="contador"/>
+                        </td>
+
 
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-bottom-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <t t-if="linea.product_id.default_code">
@@ -217,7 +227,7 @@
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
                         <t t-if="linea.price_unit">
-                            <span style="color:#454545;" t-field="linea.price_unit"/>
+                            <span style="color:#454545;" t-esc="format(linea.price_unit,'.5f')"/>
                         </t>
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
@@ -231,6 +241,10 @@
                 <t t-if="contador &lt; len(o.order_line)">
 
                 <tr>
+                    <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
+                        <span style="color:#454545;" t-esc="contador"/>
+                    </td>
+                    
 
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <t t-if="linea.product_id.default_code">
@@ -258,7 +272,7 @@
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
                         <t t-if="linea.price_unit">
-                            <span style="color:#454545;" t-field="linea.price_unit"/>
+                            <span style="color:#454545;" t-esc="format(linea.price_unit,'.5f')"/>
                         </t>
                     </td>
                     <td style="padding: 10px;border-width: thin;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
@@ -287,7 +301,9 @@
                 </tr>
                 <tr>
                     <td style="color:#454545;padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
-                        <span>Impuestos</span>
+                        <span t-esc="o.order_line[1].taxes_id[1].name"/>
+                        <br/>
+                        <span t-esc="'en ' + str(o.pricelist_id.currency_id.symbol) +str('%.2f'%o.amount_untaxed)"/>
                     </td>
                     <td style="padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_tax)"/>
