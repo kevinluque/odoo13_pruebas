@@ -258,19 +258,25 @@
                                                     <span style="color:#454545;font-family: Arial;" t-esc="o.pricelist_id.currency_id.symbol +str('%.2f'%o.amount_untaxed)"/>
                                                 </td>
                                             </tr>
-                                            <t t-set="count" t-value="o.get_distribucion_impuestos_txt()" />
-                                            <t t-foreach="count" t-as="linea_tax" >
-                                                <tr>
-                                                    <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:18px; text-align: left;font-family: Arial;padding: 10px;">
-                                                        
-                                                        <span t-esc="linea_tax[0]"/>
-                                                        <br/>
-                                                        <span t-esc="'en ' + str(o.pricelist_id.currency_id.symbol) +str('%.2f'%o.amount_untaxed)"/>
-                                                    </td>
-                                                    <td style="background-color: #D5D4D4;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:18px;font-family: Arial; text-align: right;padding: 10px;">
-                                                        <span t-esc="o.pricelist_id.currency_id.symbol"/>
-                                                        <span t-esc="linea_tax[1]"/>
-                                                    </td>
+                                            <t t-foreach="doc.amount_by_group" t-as="amount_by_group">
+                                                <tr style="">
+                                                    <t t-if="amount_by_group[5] == 1 and doc.amount_untaxed == amount_by_group[2]">
+                                                        <td name="td_amount_by_group_label_3">
+                                                            <span t-esc="amount_by_group[0]"/>
+                                                            <span>&amp;nbsp;<span>on</span>&amp;nbsp;<t t-esc="amount_by_group[2]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/></span>
+                                                        </td>
+                                                        <td name="td_amount_by_group_3" class="text-right o_price_total">
+                                                            <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                                        </td>
+                                                    </t>
+                                                    <t t-else="">
+                                                        <td name="td_amount_by_group_label">
+                                                            <span t-esc="amount_by_group[0]"/>
+                                                        </td>
+                                                        <td name="td_amount_by_group" class="text-right o_price_total">
+                                                            <span t-esc="amount_by_group[1]" t-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: doc.pricelist_id.currency_id}"/>
+                                                        </td>
+                                                    </t>
                                                 </tr>
                                             </t>
                                             <tr>

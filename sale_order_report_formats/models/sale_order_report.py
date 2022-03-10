@@ -6,13 +6,12 @@ from odoo import tools
 
 class sale_order(models.Model):
     _inherit = "sale.order"
-    distribucion_impuestos_txt = fields.Text('impuestos',compute="get_distribucion_impuestos_txt")
+    distribucion_impuestos_txt = fields.Text('impuestos',compute="get_distribucion_impuestos_txt",store=False)
     
     
     def get_distribucion_impuestos_txt(self):
         contenedor = {}
         contenedor_final = []
-        contenedor_final_formato = []
         for i in self:
             if i.order_line:
                 for linea in i.order_line:
