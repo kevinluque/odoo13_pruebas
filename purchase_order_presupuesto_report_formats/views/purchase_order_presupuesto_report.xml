@@ -145,7 +145,7 @@
                                                         <span style="color:#454545;font-family: Arial;" t-esc="linea.name"/>
                                                     </t>
                                                 </td>
-                                                <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: left;padding: 4px;">
+                                                <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 4px;">
                                                     <t t-if="linea.date_planned">
                                                         <span style="color:#454545;font-family: Arial;" t-esc="linea.date_planned"/>
                                                     </t>
