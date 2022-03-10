@@ -264,7 +264,7 @@
                                                     <td style="border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: bold; font-size:18px; text-align: left;font-family: Arial;padding: 10px;">
                                                         
                                                         <span t-esc="linea_tax[0]"/>
-                                                        <span t-esc="en + o.pricelist_id.currency_id.symbol +str('%.2f'%o.amount_total)"/>
+                                                        <span t-esc="'en' + str(o.pricelist_id.currency_id.symbol) +str('%.2f'%o.amount_total)"/>
                                                     </td>
                                                     <td style="background-color: #D5D4D4;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:18px;font-family: Arial; text-align: right;padding: 10px;">
                                                         <span t-esc="o.pricelist_id.currency_id.symbol"/>
