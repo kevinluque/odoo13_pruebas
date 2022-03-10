@@ -51,7 +51,7 @@
                     
                         <div class="page">
                             <div class="row" style="border-width: thin;border-bottom-style: ridge; font-size:16px;">
-                                <div class="col-6" align="left">
+                                <div class="col-7" align="left">
                                     <table width="45%" style="border:1px solid;border-radius: 30px">
                                         <tbody>
                                             <tr><td></td><td></td><td></td><td></td></tr>
@@ -133,8 +133,10 @@
 
 
 
+                                <div class="col-2">
 
-                                <div class="col-6">
+                                </div>
+                                <div class="col-3">
                                     <table width = "45%" style="border:3px double black;">
                                         <tbody>
                                             <tr><td></td></tr>
@@ -159,9 +161,9 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="font-size:20px; text-align: center;font-weight: bold;padding: 10px;">
+                                                <td style="font-size:20px; text-align: center;font-weight: bold;">
                                                     <t t-if="o.name">
-                                                        <span t-field="o.name"> </span>
+                                                        <span style="'padding-left: 25px;padding-left: 25px;" t-field="o.name"> </span>
                                                     </t>
                                                 </td>
                                             </tr>
