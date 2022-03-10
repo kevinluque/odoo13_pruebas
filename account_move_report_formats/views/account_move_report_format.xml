@@ -1,9 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <delete id="sale_stock.report_invoice_document_inherit_sale_stock" model="ir.ui.view" />
-    <delete id="sale.report_invoice_document_inherit_sale" model="ir.ui.view" />
-    <delete id="sale_stock.sale_stock_report_invoice_document" model="ir.ui.view" />
-    <template id="account.report_invoice_document">
+    
+    <template id="report_invoice_document_new_tecnia">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <div class="header">
@@ -475,5 +473,10 @@
                 </div>
             </t>
         </t>
+    </template>
+    <template id="report_invoice_inherit_tecniases" inherit_id="account.report_invoice_with_payments">
+        <xpath expr="//t[@t-call='account.report_invoice_document_with_payments']" position="replace">
+                <t t-call="account_move_report_formats.report_invoice_document_new_tecnia" t-lang="lang"/>
+        </xpath>
     </template>
 </odoo>
