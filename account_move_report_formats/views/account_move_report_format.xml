@@ -50,9 +50,9 @@
                 <div t-attf-class="article o_report_layout_standard o_company_#{o.company_id.id}_layout"  t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
                     
                         <div class="page">
-                            <div class="row">
-                                <div class="col-7">
-                                    <table style="border:1px solid;border-radius: 30px!important;">
+                            
+                                <div align="left">
+                                    <table style="border:1px solid;border-radius: 30px">
                                         <tbody>
                                             <tr><td></td><td></td><td></td><td></td></tr>
                                             <tr>
@@ -135,7 +135,7 @@
 
 
 
-                                <div class="col-5" align="right">
+                                <div align="right">
                                     <table style="border:3px double black;">
                                         <tbody>
                                             <tr><td></td></tr>
@@ -171,7 +171,7 @@
                                     </table>
                                 </div>
                             
-                            </div>
+
 
 
 
@@ -389,7 +389,6 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                <br/>
                                 <div align="right">
                                     <table width="30%">
                                         <tbody>
