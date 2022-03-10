@@ -75,12 +75,12 @@
                                     </t>
                                     <t t-if="o.state in ('draft','sent','to approve')">
                                         <span style= "font-weight: normal;font-size:13.5px">Solicitud de presupuesto #</span>
-                                        <span style= "color:#ED3237;font-weight: bold;font-size:13.5px" t-field="o.name"></span>
+                                        <span style= "font-weight: bold;font-size:13.5px" t-field="o.name"></span>
                                         <br/>
                                     </t>
                                     <t t-if="o.state in ('purchase','done','cancel')">
                                         <span style= "font-weight: normal;font-size:13.5px">Pedido de compra #</span>
-                                        <span style= "color:#ED3237;font-weight: bold;font-size:13.5px" t-field="o.name"></span>
+                                        <span style= "font-weight: bold;font-size:13.5px" t-field="o.name"></span>
                                         <br/>
                                     </t>
 
@@ -296,6 +296,7 @@
                     </td>
                 </tr>
                 <tr>
+                    <t t-if="o.order_line[1].taxes_id">
                     <td style="color:#454545;padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
                         <t t-if="o.order_line[1].taxes_id">
                             <span t-esc="o.order_line[1].taxes_id[1].name"/>
@@ -303,6 +304,7 @@
                             <span t-esc="'en ' + str(o.pricelist_id.currency_id.symbol) +str('%.2f'%o.amount_untaxed)"/>
                         </t>
                     </td>
+                    </t>
                     <td style="padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_tax)"/>
                     </td>
