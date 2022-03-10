@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
-    <template id="sale.report_invoice_document_inherit_sale" inherit_id="sale.report_invoice_document_inherit_sale" active="False"></template>
-    <template id="sale_stock.report_invoice_document_inherit_sale_stock" inherit_id="sale_stock.report_invoice_document_inherit_sale_stock" active="False"></template>
+    <template id="account_move_report_formats.report_invoice_document_inherit_sale_e" inherit_id="sale.report_invoice_document_inherit_sale" active="False"></template>
+    <template id="account_move_report_formats.report_invoice_document_inherit_sale_stock_e" inherit_id="sale_stock.report_invoice_document_inherit_sale_stock" active="False"></template>
 
 
     <template id="account.report_invoice_document">
