@@ -3,7 +3,7 @@
 	'name': 'Factura nuevo formato',
 	'category': 'account',
 	'author': 'ITGRUPO',
-	'depends': ['account','base'],
+	'depends': ['account','base','sale','sale_stock'],
 	'version': '1.0',
 	'description':"""
 		Creacion de formato informe factura
