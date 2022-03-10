@@ -70,33 +70,33 @@
                             </t>
                             <div class="row">
                                 <div class="col-3">
-                                    <span style="font-weight: bold; font-size:21px;color:#2B2B2B;font-family: Arial;">Referencia de convocatoria de licitación:</span>
+                                    <span style="font-weight: bold; font-size:17px;color:#2B2B2B;font-family: Arial;">Referencia de convocatoria de licitación:</span>
                                     <t t-if="o.name">
                                         <br/>
-                                        <span style="font-weight: normal; font-size:21px; color:#454545;" t-esc="o.name"></span>
+                                        <span style="font-weight: normal; font-size:17px; color:#454545;" t-esc="o.name"></span>
                                     </t>
                                 </div>
-                                <div class="col-3">
-                                    <span style="font-weight: bold; font-size:21px;color:#2B2B2B;font-family: Arial;">Fecha de orden planificada:</span>
-                                    <t t-if="o.ordering_date">
+                                <t t-if="o.ordering_date">
+                                    <div class="col-3">
+                                        <span style="font-weight: bold; font-size:17px;color:#2B2B2B;font-family: Arial;">Fecha de orden planificada:</span>                                
                                         <br/>
-                                        <span style="font-weight: normal; font-size:21px; color:#454545;" t-esc="o.ordering_date"></span>
-                                    </t>
-                                </div>
-                                <div class="col-3">
-                                    <span style="font-weight: bold;color:#2B2B2B;font-family: Arial; font-size:21px;">Tipo de Selección:</span>
-                                    <t t-if="o.type_id">
+                                        <span style="font-weight: normal; font-size:17px; color:#454545;" t-esc="o.ordering_date"></span>                                    
+                                    </div>
+                                </t>
+                                <t t-if="o.type_id">
+                                    <div class="col-3">
+                                        <span style="font-weight: bold;color:#2B2B2B;font-family: Arial; font-size:17px;">Tipo de Selección:</span>                                    
                                         <br/>
-                                        <span style="font-weight: normal; font-size:21px; color:#454545;" t-esc="o.type_id.name"></span>
-                                    </t>
-                                </div>
-                                <div class="col-3">
-                                    <span style="font-weight: bold;color:#2B2B2B;font-family: Arial; font-size:21px;">Origen</span>
-                                    <t t-if="o.origin">
+                                        <span style="font-weight: normal; font-size:17px; color:#454545;" t-esc="o.type_id.name"></span>
+                                    </div>
+                                </t>
+                                <t t-if="o.origin">
+                                    <div class="col-3">
+                                        <span style="font-weight: bold;color:#2B2B2B;font-family: Arial; font-size:17px;">Origen</span>                                    
                                         <br/>
-                                        <span style="font-weight: normal; font-size:21px; color:#454545;" t-esc="o.origin"></span>
-                                    </t>
-                                </div>
+                                        <span style="font-weight: normal; font-size:17px; color:#454545;" t-esc="o.origin"></span>
+                                    </div>
+                                </t>
                             </div>
                             <br/>
 
@@ -213,7 +213,7 @@
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: ridge;border-bottom-style: ridge; font-weight: normal; font-size:19px; text-align: center;padding: 8px;">
                                                     <t t-if="linea_compra.date_approve">                                                        
-                                                        <span style="color:#454545;font-family: Arial;" t-esc="linea_compra.date_approve.date()"></span>
+                                                        <span style="color:#454545;font-family: Arial;" t-esc="linea_compra.date_order"></span>
                                                     </t>
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: solid;border-bottom-style: ridge;background-color: #E8EAE9; font-weight: normal; font-size:19px; text-align: right;padding: 8px;">
@@ -233,7 +233,7 @@
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: ridge; font-weight: normal; font-size:19px; text-align: left;padding: 8px;">
                                                     <t t-if="linea_compra.date_approve">                                                        
-                                                        <span style="color:#454545;font-family: Arial;" t-esc="linea_compra.date_approve.date()"></span>
+                                                        <span style="color:#454545;font-family: Arial;" t-esc="linea_compra.date_order"></span>
                                                     </t>
                                                 </td>
                                                 <td style="border-width: 2.5px;border-left-style: ridge;border-right-style: solid; font-weight: normal;background-color: #E8EAE9; font-size:19px; text-align: right;padding: 8px;">
