@@ -221,7 +221,6 @@
                                                 <td style="color:#454545; font-size:18px; text-align: left;">
                                                     <t t-if="o.invoice_payment_term_id">
                                                         <span style="padding: 8px;font-family: Arial;" t-field="o.invoice_payment_term_id.name"> </span>
-                                                        <span style="padding: 8px;"> │ </span>
                                                     </t>
                                                 </td>
                                                 <td style="color:#2B2B2B;font-family: Arial; font-size:18px; text-align: left;">
@@ -232,9 +231,9 @@
                                                         <span style="padding: 8px;font-family: Arial;" t-field="o.invoice_user_id.name"> </span>
                                                     </t>
                                                 </td>
-                                                <td style="width=200mm;">
-                                                </td>
+                                                <td width="120px">
 
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
