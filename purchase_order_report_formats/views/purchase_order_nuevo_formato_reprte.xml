@@ -107,7 +107,7 @@
                                         <br/>
                                     </t>
                                     <t t-if="o.partner_id.vat">
-                                        <span style= "font-size:13.5px; color:#2A2A2A;" t-field="o.l10n_latam_identification_type_id.name"></span>
+                                        <span style= "font-size:13.5px; color:#2A2A2A;" t-field="o.partner_id.l10n_latam_identification_type_id.name"></span>
                                         <span style= "font-size:13.5px; color:#2A2A2A;">: </span>
                                         <span style= "font-size:13.5px; color:#454545;" t-field="o.partner_id.vat"></span>
                                         <br/>
@@ -297,9 +297,11 @@
                 </tr>
                 <tr>
                     <td style="color:#454545;padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: left;">
-                        <span t-esc="o.order_line[1].taxes_id[1].name"/>
-                        <br/>
-                        <span t-esc="'en ' + str(o.pricelist_id.currency_id.symbol) +str('%.2f'%o.amount_untaxed)"/>
+                        <t t-if="o.order_line[1].taxes_id">
+                            <span t-esc="o.order_line[1].taxes_id[1].name"/>
+                            <br/>
+                            <span t-esc="'en ' + str(o.pricelist_id.currency_id.symbol) +str('%.2f'%o.amount_untaxed)"/>
+                        </t>
                     </td>
                     <td style="padding: 3px;border-width: thin;border-left-style: ridge;border-right-style: ridge;border-top-style: ridge; font-weight: normal; font-size:16px; text-align: right;">
                         <span style="color:#454545;" t-esc="o.currency_id.symbol +str('%.2f'%o.amount_tax)"/>
